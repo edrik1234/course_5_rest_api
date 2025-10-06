@@ -36,7 +36,7 @@ def change_description_and_title(task_id):
         data = request.get_json()
         if not data or "title" not in data or "description" not in data:
             return jsonify({"error": "Bad Request, data must include title and description"}), 400
-        tasks[task_id] = {"completed": False , "description": data["description"] , "id": task_id , "title": data["title"]}
+        tasks[task_id] = {"completed": tasks[task_id] ["completed"] , "description": data["description"] , "id": task_id , "title": data["title"]}
         return jsonify(tasks[task_id]), 200
     else:
         return jsonify({"error" : "task not found"}), 404
@@ -54,13 +54,12 @@ def change_status_to_completed(task_id):
 
 
 @app.route("/tasks/<int:task_id>", methods=["DELETE"])
-def deleteStudent(task_id):
+def delete_task(task_id):
     if task_id in tasks:
        del tasks[task_id]
-    return jsonify({"message": "task deleted"}), 200
-
+       return jsonify({"message": "task deleted"}), 200
+    else:
+        return jsonify({"error": "invalid task_id"}), 404
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", port=5000)
-    
-  
