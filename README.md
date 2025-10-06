@@ -1,7 +1,6 @@
 # Student Management System (Python + REST API + AWS):
-
-A simple client–server project built in Python that manages student data via a REST API.  
-The client interacts with a Flask-based server (running locally or on AWS EC2 via Docker) and supports full API'S of rest(get, post(write) , put(replace) , delete)
+- A simple client–server project built in Python that manages student data via a REST API.  
+ The client interacts with a Flask-based server (running locally or on AWS EC2 via Docker) and supports full API'S of rest(get, post(write) , put(replace) , delete)
 
 ### 🔹 Features
 - get, add, edit, and delete students  
@@ -10,7 +9,7 @@ The client interacts with a Flask-based server (running locally or on AWS EC2 vi
 - Interactive CLI menu
 
 ### 🔹 Technologies and libraries
-Python | Flask | Requests | Paramiko | Docker | AWS EC2 | ssh | paramiko | enum | subprocess
+- Python | Flask | Requests | Paramiko | Docker | AWS EC2 | ssh | paramiko | enum | subprocess
 
 ### 🔹 Files
 - `lesson_5_middle_project.py` – main client menu & API logic  
